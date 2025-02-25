@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key and Mouse Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #tracker {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #mouse-coordinates, #key-press {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tracker">
+        <div id="mouse-coordinates">Mouse Position: (x: 0, y: 0)</div>
+        <div id="key-press">Key Pressed: None</div>
+    </div>
+
+    <script>
+        // Maus Koordinatlarını izləmək
+        document.addEventListener("mousemove", function(event) {
+            document.getElementById("mouse-coordinates").innerText = 
+                `Mouse Position: (x: ${event.clientX}, y: ${event.clientY})`;
+        });
+
+        // Klaviatura düymələrini izləmək
+        document.addEventListener("keydown", function(event) {
+            document.getElementById("key-press").innerText = 
+                `Key Pressed: ${event.key}`;
+        });
+    </script>
+</body>
+</html>
