@@ -34,16 +34,19 @@
     </div>
 
     <script>
-        // Maus Koordinatlarını izləmək
+        // Maus koordinatlarını izləmək
         document.addEventListener("mousemove", function(event) {
+            let mouseX = event.clientX;
+            let mouseY = event.clientY;
             document.getElementById("mouse-coordinates").innerText = 
-                `Mouse Position: (x: ${event.clientX}, y: ${event.clientY})`;
+                `Mouse Position: (x: ${mouseX}, y: ${mouseY})`;
         });
 
-        // Klaviatura düymələrini izləmək
+        // Klaviaturada düyməyə basıldığını izləmək
         document.addEventListener("keydown", function(event) {
+            let keyName = event.key; // Basılan düymənin adını alırıq
             document.getElementById("key-press").innerText = 
-                `Key Pressed: ${event.key}`;
+                `Key Pressed: ${keyName}`;
         });
     </script>
 </body>
